@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from "react";
-
+import SongCard from "./Song/Card";
 export default function RandomCat() {
-  const [randomCatImg, setRandomCatImg] = useState(null);
+  // const [randomCatImg, setRandomCatImg] = useState(null);
 
-  const fetchRandomCat = () => {
-    setRandomCatImg("");
-    fetch(`https://aws.random.cat/meow`)
-      .then((res) => res.json())
-      .then((catInfo) => {
-        setRandomCatImg(catInfo.file);
-      });
-  };
+  // const fetchRandomCat = () => {
+  //   setRandomCatImg("");
+  //   fetch(`https://aws.random.cat/meow`)
+  //     .then((res) => res.json())
+  //     .then((catInfo) => {
+  //       setRandomCatImg(catInfo.file);
+  //     });
+  // };
 
-  useEffect(() => {
-    if (randomCatImg === null) {
-      fetchRandomCat();
-    }
-  });
+  // useEffect(() => {
+  //   if (randomCatImg === null) {
+  //     fetchRandomCat();
+  //   }
+  // });
 
   return (
     <div>
       <header>
-        <h3>Cat of the day</h3>
-        <div>
+        {/* <h3>Cat of the day</h3> */}
+        <SongCard />
+        {/* <div>
           <button onClick={() => fetchRandomCat()}>New Cat</button>
         </div>
         {randomCatImg !== "" ? (
@@ -31,7 +32,7 @@ export default function RandomCat() {
           </div>
         ) : (
           <div>Loading Image</div>
-        )}
+        )} */}
       </header>
     </div>
   );
